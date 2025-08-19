@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "git": "git add . && git commit -m 'update' && git push",
-    "predeploy": "ng build --configuration production --base-href https://samiudeen96/SPM/",
+    "predeploy": "ng build --configuration production --base-href https://samiudeen96.github.io/SPM/",
     "deploy": "gh-pages -d dist/spm",
     "upload": "ng build --configuration production --base-href ./"
   },
