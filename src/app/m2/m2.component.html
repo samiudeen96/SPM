@@ -1,0 +1,295 @@
+
+<!-- <div class="bg">
+    <div class="container">
+     <div class="header pt-3 c-pointer" routerLink="/home">
+         <img src="assets/images/logo2.png" alt="">
+     </div>
+     <div class="text-center pt-3" data-aos="fade-up"
+     data-aos-duration="1000">
+         <h1 class="head-txt">Activity: Week 2</h1>
+         <h2>QUANTIFYING VALUE</h2>
+     </div>
+
+     
+    </div>
+ </div> -->
+
+
+ <div class="bg-pattern">
+ <!-- <div class="container pt-4 ">
+
+
+    <div class="main-header">
+      <h3 class="mb-20" data-aos="fade-left" data-aos-duration="1000">Explanation:</h3>
+      <hr data-aos="fade-right" data-aos-duration="1500">
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="2000">
+        <ul>
+            <li>Cattleview reduces hours on cattle count by 95%. Cattle counts 2x daily, 2 hours, every day, $20/hr.</li>
+            <li>Half the days, you have 20 hours of labor unaccounted for because client doesn't have enough information on how much work there is to do.</li>
+        </ul>
+    </div>
+  </div> -->
+
+
+<div class="mg-top pt-4">
+
+    <div class="container mb-5">
+
+        <div class="d-flex justify-content-end" data-aos="fade-up" data-aos-duration="1000">
+            <!-- <div class="pop-btn bg-blue" data-bs-toggle="modal" href="#staticBackdrop" role="button">Product Features and Customer Facts</div> -->
+        </div>
+
+        <!-- <table data-aos="fade-up" data-aos-duration="2000" class="mt-2">
+            <tr>
+                <th>Type</th>
+                <th>Value Driver</th>
+                <th>Explanation</th>
+                <th>Calculation</th>
+                <th>Total</th>
+            </tr>
+            <tr *ngFor="let data of this.service.data; let i = index">
+                <td>{{data.value}}</td>
+                <td><input name="a" class="txt form-control" (keydown)="calc(data)" [(ngModel)]="data.a" maxlength="10"></td>
+                <td [innerHtml] = "data.explain">
+                    
+                </td>
+                <td>
+                    <div class="input-group mleft">
+                        <span class="input-group-text">$</span>
+                        <input type="number" name="a" class="txt form-control"  (keypress)="calc(data)" [(ngModel)]="data.a"  maxlength="10">
+                      </div>
+                    <div class="input-group mleft">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="txt form-control" id="exampleInputEmail1" name="b"
+                         aria-describedby="emailHelp" [value]="73000" maxlength="10">
+                      </div>
+
+                      <div class="d-flex mt-3 gap-10 txt-blue">
+                        <div class="finalbutton" *ngIf="showfinalvalue[i] !== true" (click)="showfinal(i)">Fina Value</div>
+                        <div *ngIf="showfinalvalue[i] == true">
+                        <div class="total">Total &nbsp;<span>{{data.result | currency}}</span></div>
+                     
+                        </div>
+                        
+                    </div>
+                      
+                </td>
+
+
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" name="a" class="txt form-control"  (keydown)="calc(data)" [(ngModel)]="data.a"  maxlength="10">
+                      </div>
+                </td>  <td>{{data.result}}</td>
+                
+            </tr>
+        </table> -->
+
+
+        <div *ngIf ="shwcard == true" data-aos="fade-up" data-aos-duration="1500">
+                     <!-- Card -->
+
+         <div class="d-flex ajcenter flex-wrap gap-20 mt-2" >
+            
+            <div  *ngFor="let item of this.service.data; let i = index">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h4>{{item.value}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex ">
+                            <!-- <div class="flex-1">{{item.value}}</div> -->
+                            <div class="flex-1">{{item.types}}</div>
+                            <!-- <div class=" flex-1" >
+                                <input type="number" name="a" class="txt form-control" id="exampleInputEmail1"
+                                 aria-describedby="emailHelp" (keydown.enter)="this.service.calc(item)" [(ngModel)]="item.a" maxlength="10">
+                              </div> -->
+                              
+                              <div class="input-group flex-1">
+                                <span class="input-group-text">$</span>
+                                <input type="number" name="a" class="txt form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" (keyup)="this.service.calc(item)" [(ngModel)]="item.a" maxlength="10">
+                              </div>
+                        </div>
+                
+                        <!-- <div class="d-flex  mt-2">
+                            <div class="flex-1">{{item.types}}</div>
+                            <div class="input-group flex-1">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="txt form-control" id="exampleInputEmail1"
+                            (keydown)="this.service.calc(item)" name="b"
+                             aria-describedby="emailHelp" [(ngModel)]="item.b" maxlength="10">
+                          </div>
+                          
+                        <br> 
+                        
+                        </div>  -->
+            
+                         <!-- <div class="d-flex  mt-5">
+                            <div class="flex-1">Value Calculation</div>
+                            <div class="flex-1 text-end">
+                               
+                          </div>
+                        </div> -->
+                
+                        <div class="d-flex  mt-3 txt-blue">
+                            <div class="flex-1">Final Value</div>
+                            <div class="flex-1 text-end">
+                                {{item.result | currency}}
+                          </div>
+                        </div> 
+                    </div>
+                    
+                </div>
+
+                <div class="mt-2">
+                    <textarea class="form-control" placeholder="Notes" id="floatingTextarea2" [(ngModel)]="item.rough" style="height: 100px"></textarea>
+                </div>
+            </div>
+            
+            
+        </div>
+        <!-- <div>Grand Total: {{this.service.grandTotal | currency}}</div>  -->
+        <!-- <div class="alert alert-danger hide mt-3" role="alert" *ngIf ="service.shwError == true">
+            
+            Please note that all calculations for this scenario should generate value between $0 – 150,000. If you are getting a higher amount, please review your 
+
+         </div> -->
+
+        <div class="alert alert-danger hide mt-3" role="alert" *ngIf ="service.shwError == true">
+            Please fill all the elements.
+         </div>
+
+        <div class="d-flex mt-3 justify-content-between" >
+            <div class="d-flex gap-10">
+
+                <div class="pop-btn" routerLink="/m1">
+                    <!-- <svg width="40px" height="40px" viewBox="-102 0 512 512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M244 160L148 256 244 352 212 384 84 256 212 128 244 160Z" /></svg> -->
+                    <div>Back</div>
+                    </div>
+
+                <div class="pop-btn" (click)="next()"  *ngIf ="service.shwbtnm2 == true">
+                    <div >Next</div>  
+                    <!-- <svg width="40px" height="40px" viewBox="-112 0 512 512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="M64 352L160 256 64 160 96 128 224 256 96 384 64 352Z" /></svg>   -->
+                </div>
+
+                <div *ngIf ="service.shwbtnm2 == true"><img class="hand" src="assets/images/hand.svg" alt=""></div>
+            </div>
+
+            <div>
+                
+             
+                  
+            </div>
+
+            <div class="hide">
+                <button class="button" (click)="submit()">
+                    <div>Submit</div>    
+                </button>
+            </div>
+        </div>
+
+        </div>
+
+
+        
+
+</div>
+</div>
+
+
+        <div class="container mb-5" *ngIf ="shwtbl == true" data-aos="fade-up" data-aos-duration="1000">
+            <div class="table1" >
+                <table >
+                   <tr>
+                    <th>Value Driver</th>
+                    <th>Type</th>
+                    <th>Value</th>
+                    <th>Explanation</th>
+                   </tr>
+
+                   <tr *ngFor="let item of this.service.data; index as i">
+                    <td>{{item.value}}</td>
+                    <td class="text-center">{{item.types}}</td>
+                    <td class="text-center">{{item.result | currency}}</td>
+                    <td>{{item.rough}}</td>
+                   </tr>
+
+                   <tr>
+                    <td></td>
+                    <td class="bg-blue txt-white text-center fw-bold">Grand Total</td>
+                    <td class="text-center txt-blue fw-bold">{{this.service.grandTotal | currency}}</td>
+                    <td></td>
+                   </tr>
+                </table>
+            </div>
+
+
+            
+
+            
+            <div class="hide">
+                <div class="d-flex mt-3 justify-content-between">
+                    <div class="d-flex gap-10">
+        
+                        <div class="pop-btn" (click)="shwback()"> 
+                            <div>Back</div>
+                            </div>
+        
+                        <!-- <div class="pop-btn">
+                            <div >Next</div>  
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- ChartJS -->
+        <div class="container pt-4 pb-5" [hidden] ="shwtbl !== true" >
+            <div>
+                <div class="text-center fw-bold">Value Waterfall</div>
+                <canvas id="myChart" #mychart></canvas>
+             </div>
+
+             <div class="d-flex justify-content-end mt-5">
+                <div class="pop-btn" (click)="print()">
+                    Print Output
+                </div>
+             </div>
+
+        </div>
+
+
+        <!-- CanvasJS -->
+        <!-- <div class="container pt-4 pb-5" *ngIf ="shwtbl == true" >
+            <div>
+                
+                <canvasjs-chart [options]="this.chartOptions" ></canvasjs-chart>    
+             </div>
+
+             <div class="d-flex justify-content-end mt-5">
+                <div class="pop-btn" (click)="print()">
+                    Print Output
+                </div>
+             </div>
+
+        </div> -->
+
+
+        
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <app-model></app-model>
+   </div>

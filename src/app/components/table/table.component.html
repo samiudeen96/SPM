@@ -1,0 +1,249 @@
+<div id="print">
+    <div class="table2 shadow mt-3">
+
+        <table>
+            <tr>
+                <th>Value Drivers</th>
+                <th colspan="2">Types</th>
+
+            </tr>
+
+
+            <tr *ngFor="let item of service.data; index as i" class="addremove">
+                <td><input type="text" name="value" [(ngModel)]="item.value" (change)="showError = false" [value]="item.value" class="form-control"
+                        id="formGroupExampleInput" placeholder="{{item.placeholder}}" maxlength="40">
+                </td>
+
+                <td class="bg-gr">
+
+                    <div class="d-flex gap-50 align-items-center">
+                        <select [(ngModel)]="item.types" name="types" (change)="showError = false" class="form-select " aria-label="select example">
+                            <option *ngFor="let value of dropdown">{{value}}</option>
+                        </select>
+    
+                        <div class="hide">
+                            <div class="text-center d-flex  gap-10 ">
+                                <button class="remove c-pointer" title="Delete" (click)="remove(i)" *ngIf="i > 1">
+                                    <!-- <svg version="1.1" title="Delete" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px"
+                                        height="30px" fill="white" viewBox="0 0 473 473"
+                                        style="enable-background:new 0 0 473 473;" xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M324.285,215.015V128h20V38h-98.384V0H132.669v38H34.285v90h20v305h161.523c23.578,24.635,56.766,40,93.477,40c71.368,0,129.43-58.062,129.43-129.43C438.715,277.276,388.612,222.474,324.285,215.015z M294.285,215.015c-18.052,2.093-34.982,7.911-50,16.669V128h50V215.015z M162.669,30h53.232v8h-53.232V30z M64.285,68h250v30h-250V68z M84.285,128h50v275h-50V128z M164.285,403V128h50v127.768c-21.356,23.089-34.429,53.946-34.429,87.802c0,21.411,5.231,41.622,14.475,59.43H164.285z M309.285,443c-54.826,0-99.429-44.604-99.429-99.43s44.604-99.429,99.429-99.429s99.43,44.604,99.43,99.429S364.111,443,309.285,443z" />
+                                            <polygon
+                                                points="342.248,289.395 309.285,322.358 276.323,289.395 255.11,310.608 288.073,343.571 255.11,376.533 276.323,397.746309.285,364.783 342.248,397.746 363.461,376.533 330.498,343.571 363.461,310.608 	" />
+                                        </g>
+                                    </svg> -->
+
+                                    <img src="assets/images/del.svg" alt="">
+    
+    
+                                </button>
+    
+                                <button class="add c-pointer" title="Add" (click)="add()" *ngIf="i == service.data.length - 1 && i <= 5">
+                                    <!-- <svg width="50px" title="Add" height="50px" fill="white" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" />
+                                        </g>
+                                    </svg> -->
+                                    <img src="assets/images/add1.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+               
+                <td class="">
+
+                    <!-- <div class="hide">
+                        <div class="text-center d-flex ajbcenter gap-10 ">
+                            <button class="remove c-pointer" title="Delete" (click)="remove(i)" *ngIf="i > 1">
+                                <svg version="1.1" title="Delete" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px"
+                                    height="30px" fill="white" viewBox="0 0 473 473"
+                                    style="enable-background:new 0 0 473 473;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M324.285,215.015V128h20V38h-98.384V0H132.669v38H34.285v90h20v305h161.523c23.578,24.635,56.766,40,93.477,40c71.368,0,129.43-58.062,129.43-129.43C438.715,277.276,388.612,222.474,324.285,215.015z M294.285,215.015c-18.052,2.093-34.982,7.911-50,16.669V128h50V215.015z M162.669,30h53.232v8h-53.232V30z M64.285,68h250v30h-250V68z M84.285,128h50v275h-50V128z M164.285,403V128h50v127.768c-21.356,23.089-34.429,53.946-34.429,87.802c0,21.411,5.231,41.622,14.475,59.43H164.285z M309.285,443c-54.826,0-99.429-44.604-99.429-99.43s44.604-99.429,99.429-99.429s99.43,44.604,99.43,99.429S364.111,443,309.285,443z" />
+                                        <polygon
+                                            points="342.248,289.395 309.285,322.358 276.323,289.395 255.11,310.608 288.073,343.571 255.11,376.533 276.323,397.746309.285,364.783 342.248,397.746 363.461,376.533 330.498,343.571 363.461,310.608 	" />
+                                    </g>
+                                </svg>
+
+
+                            </button>
+
+                            <button class="add c-pointer" title="Add" (click)="add()" *ngIf="i == service.data.length - 1">
+                                <svg width="30px" title="Add" height="30px" fill="white" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" />
+                                    </g>
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div> -->
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="hide">
+
+    <div class="mt-3">
+        <div class="alert alert-danger hide" role="alert" *ngIf = "showError == true">
+           {{IText}}
+        </div>
+          
+    </div>
+
+    <div class="d-flex align-item-center justify-content-between mt-3 hide gap-10">
+       
+        <div class="d-flex align-item-center gap-10">
+
+            <!-- <button class="download-btn" routerLink="/home">
+                <svg width="40px" height="40px" fill="white" viewBox="-102 0 512 512" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M244 160L148 256 244 352 212 384 84 256 212 128 244 160Z" /></svg>
+                <div>Back</div>
+            </button> -->
+
+            <div class="pop-btn" routerLink="/home">
+                <!-- <svg width="40px" height="40px" fill="white" viewBox="-102 0 512 512" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M244 160L148 256 244 352 212 384 84 256 212 128 244 160Z" /></svg> -->
+                <div>Back to Home</div>
+                </div>
+
+            <!-- <button class="download-btn d-flex ajcenter gap-10 hide" routerLink="/home">
+                <div>Back</div>
+                <div>
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="white" width="22px"
+                        height="22px" viewBox="0 0 26.39 26.39" style="enable-background:new 0 0 26.39 26.39;"
+                        xml:space="preserve">
+                        <g>
+                            <g id="c14_house">
+                                <path
+                                    d="M3.588,24.297c0,0-0.024,0.59,0.553,0.59c0.718,0,6.652-0.008,6.652-0.008l0.01-5.451c0,0-0.094-0.898,0.777-0.898h2.761c1.031,0,0.968,0.898,0.968,0.898l-0.012,5.434c0,0,5.628,0,6.512,0c0.732,0,0.699-0.734,0.699-0.734V14.076L13.33,5.913l-9.742,8.164C3.588,14.077,3.588,24.297,3.588,24.297z" />
+                                <path
+                                    d="M0,13.317c0,0,0.826,1.524,2.631,0l10.781-9.121l10.107,9.064c2.088,1.506,2.871,0,2.871,0L13.412,1.504L0,13.317z" />
+                                <polygon points="23.273,4.175 20.674,4.175 20.685,7.328 23.273,9.525 		" />
+                            </g>
+                            <g id="Capa_1_216_"></g>
+                        </g>
+                    </svg>
+                </div>
+            </button> -->
+
+            <div class="pop-btn" *ngIf=" showbtn == true" routerLink="/m2">
+                <div>Step 2</div>  
+                <!-- <svg width="40px" height="40px" fill="white" viewBox="-112 0 512 512" xmlns="http://www.w3.org/2000/svg" >
+                <path d="M64 352L160 256 64 160 96 128 224 256 96 384 64 352Z" /></svg> -->
+                </div>
+
+                <div *ngIf=" showbtn == true"><img class="hand" src="assets/images/hand.svg" alt=""></div>
+
+            <!-- <button class="download-btn d-flex ajcenter gap-10 hide" routerLink="/m2">
+                Next
+            </button> -->
+        </div>
+       
+    
+      
+    
+    
+    <div class="d-flex gap-30 hide">
+        <div class="hide" *ngIf="!showError">
+            <button (click)="print()" class="download-btn" *ngIf=" showbtn == true">
+                <div class="d-flex gap-10">
+                    <div>Download</div>
+                    <div>
+    
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px"
+                            height="17px" fill="white" viewBox="0 0 29.978 29.978"
+                            style="enable-background:new 0 0 29.978 29.978;" xml:space="preserve">
+                            <g>
+                                <path
+                                    d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012v-8.861H25.462z" />
+                                <path
+                                    d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723c0,0-0.129-0.494,0.615-0.494c0.75,0,4.035,0,4.572,0c0.536,0,0.524,0.416,0.524,0.416c0,1.762,0,6.373,0,8.742c0,0.768,0,1.266,0,1.266s1.842,0,2.998,0c1.154,0,0.285,0.867,0.285,0.867s-4.904,6.51-5.588,7.193C15.092,18.979,14.62,18.426,14.62,18.426z" />
+                            </g>
+                        </svg>
+    
+                    </div>
+                </div>
+            </button>
+        </div>
+        
+        <div class="hide">
+            <button class="download-btn" (click)="submit()">Submit</button>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+
+
+ <!-- <div class="hide" *ngIf=" showbtn == true">
+    <div class="d-flex ajcenter flex-wrap gap-30 mt-5" >
+        <div class="card shadow" *ngFor="let item of service.data; index as i" >
+            <div class="card-header">
+                
+                <h4>{{item.value}}</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-flex ">
+                    <div class="flex-1">{{item.value}}</div>
+                <div>
+                    <div class=" flex-1" >
+                        <input type="number" name="a" class="txt form-control" id="exampleInputEmail1"
+                         aria-describedby="emailHelp" (keydown)="calc(item)" [(ngModel)]="item.a" maxlength="10">
+                        
+                      </div>
+                </div>
+                </div>
+        
+                <div class="d-flex  mt-2">
+                    
+                    <div class="flex-1">{{item.types}}</div>
+                    <div class="input-group flex-1">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="txt form-control" id="exampleInputEmail1"
+                    name="b" value="73000"
+                     aria-describedby="emailHelp"  maxlength="10" readonly>
+                  </div>
+                  
+                <br> 
+                
+                </div>
+    
+                 <div class="d-flex  mt-5">
+                    <div class="flex-1">Value Calculation</div>
+                    <div class="flex-1 text-end">
+                       {{item.result | currency}}
+                  </div>
+                </div>
+        
+                <div class="d-flex  mt-2">
+                    <div class="flex-1">Final Value</div>
+                    <div class="flex-1 text-end">
+                       
+                  </div>
+                </div> 
+        
+            </div>
+        </div>
+        
+    </div>
+    <div>Grnad Total: {{grandTotal | currency}}</div>
+</div>  -->

@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+@import "/src/app/variable.scss";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,300;1,400&display=swap");
+
+body{
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0 auto;
+    line-height: 1.2;
+}
+
+.ins{
+    color: $tertiary ;
+    font-style: italic;
+}
+
+h1{
+    font-size: 100px;
+    color: white;
+}
+
+h2{
+    font-size: 65px;
+    font-weight: bold;
+    color: white;
+}
+
+h3{
+    color: $secondary_new;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+.main-header{
+    
+    hr{
+        border-top: 7px solid;
+    color: $secondary_new;
+    opacity: 1;
+    width: 200px;
+    // border-radius: 5px;
+    margin-bottom: 20px;
+    }
+}
+
+h4{
+    color:  $primary_new;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h5{
+    color: $tertiary;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+
+.sub-header{
+    margin-top: 45px;
+    hr{
+        border-top: 5px dashed;
+        color: #519136;
+        opacity: 1;
+        width: 95px;
+        // border-radius: 5px;
+        margin-bottom: 20px;
+    }
+}
+
+
+.head-txt{
+    padding-top: 145px;
+}
+
+.txt-white{
+    color: #fff;
+}
+
+.txt-blue{
+    color: $secondary_new;
+}
+
+.bg-blue{
+    background-color: $secondary_new;
+}
+
+
+
+// d-flex
+
+.ajcenter{
+    justify-content: center;
+    align-items: center;
+}
+
+.ajbcenter{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ajend{
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.gap-10{
+    gap: 10px;
+}
+
+.gap-30{
+    gap: 30px;
+}
+
+.gap-20{
+    gap: 20px;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+
+.c-pointer{
+    cursor: pointer;
+}
+
+
+
+.bg-pattern {
+    background-image: url("assets/images/bg.png");
+    min-height: calc(100vh - 480px);
+  }
+
+
+
+  .hand {
+    animation: move 2s infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0px);
+     
+    }
+    50% {
+      transform: translateX(100%);
+     
+    }
+    100% {
+      transform: translateX(0px);
+     
+    }
+  }
+
+

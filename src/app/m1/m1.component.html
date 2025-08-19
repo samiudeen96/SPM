@@ -1,0 +1,206 @@
+
+<!-- <div class="bg">
+   <div class="container">
+    <div class="header pt-3 c-pointer" routerLink="/home">
+        <img src="assets/images/logo2.png" alt="">
+    </div>
+    <div class="text-center pt-3" data-aos="fade-up"
+    data-aos-duration="1000">
+        <h1 class="head-txt">CARGILL CATTLEVIEW</h1>
+        <h2>Strategic Pricing Masterclass</h2>
+    </div>
+   </div>
+</div> -->
+<div class="bg-pattern">
+       <div class="container pt-4 pb-5" >
+        <div class="slider">
+            <!-- <input type="radio" name="slider" (click)="submit1()" id="slide1" checked>
+            <input type="radio" name="slider" (click)="submit2()" id="slide2">
+            <input type="radio" name="slider" (click)="submit3()" id="slide3"> -->
+            
+
+
+            <div class="cara">
+
+                <div class="page2">
+                    <div class="slide1" >
+                        <div class="slide-content">
+                           <!-- <div class="main-header">
+                            <h3 class="mb-20" class="mb-20" data-aos="fade-left" data-aos-duration="1000">Activity 1: Identifying Value</h3>
+                            <hr data-aos="fade-right" data-aos-duration="1000">
+                           </div> -->
+                           
+                           <!-- <div data-aos="fade-up" data-aos-duration="2000">
+                            <p class="hide">Given the product clues, identify value drivers for your product. You will need at least 3 value drivers & 1 negative value driver to enter your responses, but you should aim for 5 value drivers.</p> 
+                            <p class="hide">Please keep in mind that any value driver you submit will need to be calculated in subsequent steps of this course.</p>
+                           </div> -->
+                            
+                            <!-- <div class="sub-header" >
+                                <h5 data-aos="fade-left" data-aos-duration="2000">Customer Facts</h5>
+                            <hr data-aos="fade-right" data-aos-duration="2000">
+                            </div> -->
+                            
+
+                            <!-- <div data-aos="fade-up" data-aos-duration="2000">
+                                <ul >
+                                    <li>Cattle count peformed 2x daily, which requires 2 hours of labor total. Cattle counter is paid $20/hour.This is done 365 days a year</li>
+                                    <li>They have a monthly deadline to turn in cattle counts, or else they are fined $1,000. Late counts happen on average, 3 months each year</li>
+                                    <li>About half the days, there isn't work to do for everyone, so there are about 20 hours of unaccounted work on those days</li>
+                                    <li>Daily, about 20% of pens don't need food replenishment, but it's different every time. It takes about 2 hours each day to do this job </li>
+                                    <li>There are about 30 extreme weather events yearly when the drone wouldn't be able to fly. They may have to pay someone overtime (4x) to come in those days & count</li>
+                                    <li>Having real time data on cow health could help client catch disease early, reducing loss by .01%</li>
+                                </ul>
+        
+                                
+                                
+                                <div class="d-flex justify-content-center">
+                                    <div class="table1">
+                                        <table>
+                                            <tr>
+                                                <th class="txt-white">Customer Name</th>
+                                                <th class="text-center bg-wh txt-white">Supreme Pastures</th>
+                                                
+                                            </tr>
+                        
+                                            <tr>
+                                                <td>Deal Term (Months)</td>
+                                                <td class="text-center bg-wh">12</td>
+                                                <td rowspan="7">$20/hr, <br> on average <br> $100,000</td>
+                                            </tr>
+                        
+                                            <tr>
+                                                <td>Number of Cows</td>
+                                                <td class="text-center bg-wh">20,000</td>
+                                            </tr>
+                        
+                                            <tr>
+                                                <td>Number of Employees</td>
+                                                <td class="text-center bg-wh">44</td>
+                                            </tr>
+                        
+                                            <tr>
+                                                <td>Number of Vet Employees</td>
+                                                <td class="text-center bg-wh">2</td>
+                                            </tr>
+                        
+                        
+                                            <tr>
+                                                <td>Loss Each Year Preventable Cattle Deaths</td>
+                                                <td class="text-center bg-wh">2.00%</td>
+                                            </tr>
+                        
+                                            <tr>
+                                                <td>Profit Per Cow</td>
+                                                <td class="text-center bg-wh">500</td>
+                                            </tr>
+                        
+                                
+                                            
+                        
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                           <div data-aos="fade-up" data-aos-duration="1500">
+                            <!-- <p class="ins pt-2">Enter up to 5 elements in the left column & identify the type from the drop-down list. Then click Submit</p> -->
+                            <p class="ins pt-2">Enter in elements in the left column & identify the type from the drop-down list. Then click Submit.</p>
+                            
+                            <!--<div class="hide">
+                                <div class="inspop ">
+                                    <div><p class="fst-italic">Remember to choose <span class="txt-blue">one NBA</span> and <span class="txt-blue">one negative</span> driver to submit your responses.</p></div>
+                                     <div class="pop-btn" data-bs-toggle="modal" href="#staticBackdrop" role="button">Product Features and Customer Facts</div> 
+                                  </div>
+                            </div>-->
+                            <app-table></app-table>
+
+                        </div>
+                    </div>
+                </div>      
+                           </div>
+
+                <!-- <div class="page3">
+                    <div class="slide2" *ngIf="slide2">
+                        <div class="slide-content">
+
+                            <div class="main-header">
+                                <h3>Step 2: Calculate the Value Drivers.</h3>
+                                <hr>
+                               </div>
+
+                            
+                            <p class="ins">Click the thumbnail to enter the value drivers for Cattleview and submit.</p>
+                           <div class="d-flex ajcenter flex-wrap gap-30">
+                            <div class="card shadow" *ngFor="let item of card">
+                                <div class="card-header">
+                                    <h4>{{item.head}}</h4>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="d-flex ">
+                                        <div class="flex-1">{{item.txt}}</div>
+                                    <div>
+                                        <div class=" flex-1">
+                                            <input type="email" class="txt form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                          </div>
+                                    </div>
+                                    </div>
+    
+                                    <div class="d-flex  mt-2">
+                                        <div class="flex-1">{{item.txt2}}</div>
+                                        <div class="input-group flex-1">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                                      </div>
+                                    </div>
+    
+                                    <div class="d-flex  mt-5">
+                                        <div class="flex-1">{{item.txt3}}</div>
+                                        <div class="flex-1 text-end">
+                                            numbers
+                                      </div>
+                                    </div>
+    
+                                    <div class="d-flex  mt-2">
+                                        <div class="flex-1">{{item.txt4}}</div>
+                                        <div class="flex-1 text-end">
+                                            numbers
+                                      </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="submit-btn mt-4" >
+                                   
+                                <label for="slide3" (click)="submit2()">Submit</label>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div> -->
+        
+               <!-- <div class="page4">
+                <div class="slide3" *ngIf="slide3">
+                    slide3
+                    <label for="slide2" (click)="submit3()">Submit</label>
+                </div>
+               </div> -->
+
+
+            </div>
+    
+            <!-- <div id="bullets">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+             </div> -->
+
+        </div>
+       </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <app-model></app-model>
+   </div>

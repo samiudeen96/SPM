@@ -1,0 +1,60 @@
+<div class="bg">
+    <div class="container pt-5 pb-5" data-aos="fade-up" data-aos-duration="1500">
+ <p>There are 112 different value-drivers and ideas about their associated formulas & data inputs listed in the Select Value Drivers drop down list.</p>
+ <h3 class="text-center pb-4">How to use this tool</h3>   
+ <p>Choose from the value-driver drop-down menu to obtain ideas on how you can go about obtaining a quantified value for that value driver.</p>
+ <!-- <ng-select2 
+	[(ngModel)]="fruit"
+	[data]="fruitList"
+	[placeholder]="'Please select a fruit...'">		
+</ng-select2> -->
+<!-- <div class="d-flex">
+    <div>
+        <ng-select2 [data]="exampleData"
+        [ngModel]="test"
+        (valueChanged)="valueChanged($event)"
+        (ngModelChange)="modelChanged($event)"  
+       width="600" >
+</ng-select2>
+</div>
+<div class="flex-1">
+    <div  *ngFor="let data of this.array; let $event = index">
+        <div *ngIf="selectedTab == $event">
+        {{data.formula}}
+    </div>
+    </div>
+</div>
+</div> -->
+<p class="ins pt-2">Select Value Driver searchable drop-down list and find the Fromula.</p>
+                            
+<div class="table2 shadow mt-3">
+<table>
+    <tr>
+        <th>Select Value Driver (searchable drop-down list)</th>
+        <th>Formula</th>
+    </tr>
+    <tr>
+        <td>
+            <ng-select2 [data]="exampleData"
+        [ngModel]="test"
+        (valueChanged)="valueChanged($event)"
+        (ngModelChange)="modelChanged($event)"  
+       width="600" >
+</ng-select2>  
+        </td>
+        <td>
+            <div  *ngFor="let data of this.exampleData; let $event = index">
+                <div *ngIf="selectedTab == $event">
+                {{data.formula}}
+            </div>
+            </div>
+        </td>
+    </tr>
+
+
+
+</table>
+</div>
+<a href="assets/documents/General_Value_Driver_Library_Example.pdf" target="_blank" class="download-btn mt-5">Download full list as PDF</a>
+</div>
+</div>
